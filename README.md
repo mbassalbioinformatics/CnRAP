@@ -1,4 +1,4 @@
-# CnRAP
+# CnRAP (Cut & Run Analysis Pipeline)
 Analytical pipeline developed to anlayze Cut and Run data.  Inspired by both Henikoff (SEACR) and Orkin (Cut&amp;RunTools) lab pipelines. 
 
 The python scripts are written to generate bash scripts (tested on Ubuntu 16.04). This was done to allow tweaking of bash scripts later if needed without having to re-run most steps etc...  This approach works better for my workflow so thats why I did it this way.
