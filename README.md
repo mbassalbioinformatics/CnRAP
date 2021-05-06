@@ -5,7 +5,7 @@ The python scripts are written to generate bash scripts (tested on Ubuntu 16.04)
 
 The tools required to be used in this pipeline include (in order of use)
 - trimmomatic - v0.36 tested
-- kseq trimmer - developed by the Orkin lab - tool can be found on their bitbucket page (https://bitbucket.org/qzhudfci/cutruntools/src/master/)
+- kseq trimmer (kseq_test) - developed by the Orkin lab - tool can be found on their bitbucket page (https://bitbucket.org/qzhudfci/cutruntools/src/master/)
 - bwa - v0.7.17-r1188 tested
 - stampy - v1.0.32 tested
 - bamtools - v2.5.1 tested
