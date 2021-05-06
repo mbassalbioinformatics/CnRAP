@@ -7,7 +7,7 @@ The tools required to be used in this pipeline include (in order of use)
 - trimmomatic - v0.36 tested
 - kseq trimmer (kseq_test) - developed by the Orkin lab - tool can be found on their bitbucket page (https://bitbucket.org/qzhudfci/cutruntools/src/master/)
 - bwa - v0.7.17-r1188 tested
-- stampy - v1.0.32 tested
+- stampy - v1.0.32 tested (https://www.well.ox.ac.uk/research/research-groups/lunter-group/lunter-group/stampy)
 - bamtools - v2.5.1 tested
 - samtools - v1.5 tested
 - deeptools - v2.5.7 tested
@@ -17,7 +17,7 @@ The tools required to be used in this pipeline include (in order of use)
 - MEME - v5.0.5
 - python3 - v3.6.1 tested from Anaconda
 - R - v3.6.1 tested
-- ChIPseeker - v1.20.0 tested from Bioconductor.
+- ChIPseeker - v1.20.0 tested from Bioconductor
 
 If any version seems a little out of date its just because it got updated online and I didnt update it on my setup.  Do I intend to update which versions are tested? Not planning on it for now... We'll see though. I do like to keep my tools updated though.  If any changes I'll update here.
 
@@ -29,3 +29,7 @@ The remaining scripts (both python and R) then assume that all the output files 
 Overall though, if any issues I will try to help to the best of my ability but unless there's a need for the work in my lab to develop/add features I probably won't be doing that, sorry :(
 
 Oh 1 last thing...and this is quite bad of me... these scripts have NO error handling really. No checking of input conditions or files or anything.  Big no no(!!) I know but still...  So just make sure you feed in what you want carefully into the scripts.
+
+
+- 06/05/21 Update - 
+Ok soooo in developing our ChIP-Seq Analysis Pipeline (ChIP-AP) (https://github.com/JSuryatenggara/ChIP-AP), a number of people have asked about Cut&Run and its use with that suite of tools. So keeping this interest in mind, we are developing CnRAPv2 which takes many design elements from ChIP-AP and tailors the analysis experience for C&R that builds on this pipeline but greatly improves upon it. The code in this repo will remain as is (with only bug fixes being made) owing to its use in our publication (PMID 33406418) and a companion STAR Protocol (work-in-progress). However, when CnRAPv2 is ready, will link it here for future publications and uses.
