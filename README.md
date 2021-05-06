@@ -5,7 +5,7 @@ The python scripts are written to generate bash scripts (tested on Ubuntu 16.04)
 
 The tools required to be used in this pipeline include (in order of use)
 - trimmomatic - v0.36 tested
-- kseq trimmer - developed by the Orkin lab - tool can be found on their bitbucket page
+- kseq trimmer - developed by the Orkin lab - tool can be found on their bitbucket page (https://bitbucket.org/qzhudfci/cutruntools/src/master/)
 - bwa - v0.7.17-r1188 tested
 - stampy - v1.0.32 tested
 - bamtools - v2.5.1 tested
@@ -22,7 +22,7 @@ The tools required to be used in this pipeline include (in order of use)
 If any version seems a little out of date its just because it got updated online and I didnt update it on my setup.  Do I intend to update which versions are tested? Not planning on it for now... We'll see though. I do like to keep my tools updated though.  If any changes I'll update here.
 
 How to run?
-Pretty basic really.  Each script is very well annotated so hopefully they are easy enough to follow and you can follow my logic in what I did.  At the start of each python script, there are a number of arguments that need to be passed into the script when calling. I hope the arguments are self-explanatory. Python script 01 needs to be run <b>seperately</b> for every pair of fastq files.  This is because each run for a pair can be quite time-consuming in case you want to run 1 or all of the pairs at the same time - depending on if your setup can take it - how many cores to throw at it etc...  A simple bash script can be written to run them sequentially or in parallel - again depending on your setup. Something that reared its ugly head when trying to run the individual scripts in parallel was sometimes 1 of the scripts would fail with a broken pipe error in pythong.  Not sure whether that was python3 calling it quits because of pushing the system or something with Ubuntu failed to pipe things properly - dunno tbh. If that happens just re-run the script and it should work fine.
+Pretty basic really.  Each script is very well annotated so hopefully they are easy enough to follow and you can follow my logic in what I did.  At the start of each python script, there are a number of arguments that need to be passed into the script when calling. I hope the arguments are self-explanatory. Python script 01 needs to be run <b>seperately</b> for every pair of fastq files.  This is because each run for a pair can be quite time-consuming in case you want to run 1 or all of the pairs at the same time - depending on if your setup can take it - how many cores to throw at it etc...  A simple bash script can be written to run them sequentially or in parallel - again depending on your setup. Something that reared its ugly head when trying to run the individual scripts in parallel was sometimes 1 of the scripts would fail with a broken pipe error in python.  Not sure whether that was python3 calling it quits because of pushing the system or something with Ubuntu failed to pipe things properly - dunno tbh. If that happens just re-run the script and it should work fine.
 
 The remaining scripts (both python and R) then assume that all the output files are together in a single directory for each step (follow the directory structure from the comments.  Again, doing it this way gives the flexibility to run 1 or all parts depending on what you want.
 
