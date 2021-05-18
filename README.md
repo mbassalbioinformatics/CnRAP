@@ -52,9 +52,9 @@ This will go through and setup most of the tools required.
 
 4.  Next, install the required genome for HOMER. This is done by running the following command
 ```
-perl ~/anaconda3/pkgs/homer-<v#>/share/homer/configureHomer.pl -install <genome>
+perl ~/anaconda3/pkgs/homer-<v#>/share/homer/configureHomer.pl -install <req_genome>
 ```
- where _"<v#>"_ is the installed version number of HOMER and _ "<genome>" _ is the genome required. 
+ where _"<v#>"_ is the installed version number of HOMER and _"<req_genome>"_ is the required genome required. 
   
  At the time of writing this documentation, using the latest available packages from conda, the above command would look something along the lines of...
 ```
