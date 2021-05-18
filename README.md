@@ -102,7 +102,26 @@ stampy.py --species=human --assembly=hg38_masked -G human_bwa_index_hg38_masked 
 stampy.py -g human_bwa_index_hg38_masked -H human_bwa_index_hg38_masked
 ```
 In our case, these indexes needed to be built for both hg38 and sacCer3.
+
   
+## Script 01 Configuration
+Prior to running script 01 for each pair of fq files (R1 and R2 fq files per sample), there are a number of parameters that need to be configured internal to the script - these are found in lines 13-24. Below is a description of what each line requires as input.
+
+**Script 01 Variable** | **Required Input**
+-------------------|---------------
+**trimmomatic_path_jar** | full path to the trimmomatic jar file _OR_ if installed as outlined above, simply write "trimmomatic"
+**adapter_path** | full path to the bbmap adapters.fa file (this can be found in ~/anaconda3/pkgs/bbmap-<v#>/opt/bbmap-<v#>/resources/)
+**kseq_path_exec** | full path to the kseq_test application _OR_ if included in .bashrc path, simply write "kseq_test"
+**bwa_path_exec** | full path to bwa _OR_ if installed as outlined above, simply write "bwa"
+**bwa_hg_masked_index** | full path to the *folder* of the masked hg index
+**bwa_sc_masked_index** | full path to the *folder* of the masked sacCer index
+**stampy_hg_stidx_hash** | full path to the *folder* of the stampy hg index
+**stampy_sc_stidx_hash** | full path to the *folder* of the stampy sacCer index
+**samtools_path_exec** | full path to samtools _OR_ if installed as outlined above, simply write "samtools"
+**picard_path_jar** | full path to the picard jar file _OR_ if installed as outlined above, simply write "picard"
+**read_length_file** | full path to a text file which only contains a single number - the length of the reads eg 42
+**multimap_limit** | as C&R reads are shorter in length, the likelihood of multi-mapping increases. This value simply specifies out many locations a read is allowed to map to. For unique alignments only, simple enter "1", otherwise, enter the number required.
+
 
 # How to run?
 Each script is very well annotated so hopefully they are easy enough to follow and you can follow my logic in what I did. 
