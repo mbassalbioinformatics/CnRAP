@@ -44,7 +44,7 @@ conda create -n cnrap_env python=2
 ```
 conda activate cnrap_env
 
-conda install -c bioconda trimmomatic bwa samtools deeptools seacr homer meme ucsc-bedgraphtobigwig bioconductor-biocinstaller bioconductor-chipseeker
+conda install -c bioconda trimmomatic bwa picard samtools deeptools seacr homer meme ucsc-bedgraphtobigwig bioconductor-biocinstaller bioconductor-chipseeker
 ```
 This will go through and setup most of the tools required.
 
