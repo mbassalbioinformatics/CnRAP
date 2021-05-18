@@ -22,6 +22,7 @@ The tools required to be used in this pipeline include (in order of use)
 - R - v3.6.1 tested
 - ChIPseeker - v1.20.0 tested
 
+_**CnRAP is written in Python3 and so all scripts are to be called using Python3. Stampy only supports Python2. Prior to running CnRAP make sure you have working versions of both Python3 and Python2 setup in your system path or use Anaconda to manage the different python versions. If setting up CnRAP as per the following instructions, simply typing "python" will run Python2, and you would need to type "python3" to trigger Python3. CnRAP was written around this assumption (that python2 is the default python installation in the path).**_
 
 # Installation
 1. Download and install [Anaconda 3](https://www.anaconda.com/products/individual) on your system. CnRAP is only compatible with Python2 unfortunately. Install Conda accepting defaults unless you are a more experienced user. Once complete, restart the shell to initialize the conda installation.
