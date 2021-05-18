@@ -17,6 +17,7 @@ The tools required to be used in this pipeline include (in order of use)
 - SEACR - v1.1 tested
 - HOMER - v4.10 tested
 - MEME - v5.0.5 tested
+- Picard - v2.21.2 tested
 - python3 - v3.6.1 tested
 - python2 - v2.7+ tested
 - R - v3.6.1 tested
