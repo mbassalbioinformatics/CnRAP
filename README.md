@@ -23,10 +23,10 @@ The tools required to be used in this pipeline include:
 - R - v3.6.1 tested
 - ChIPseeker - v1.20.0 tested
 
-_**CnRAP is written in Python3 and so all scripts are to be called using Python3. Stampy only supports Python2. Prior to running CnRAP make sure you have working versions of both Python3 and Python2 setup in your system path or use Anaconda to manage the different python versions. If setting up CnRAP as per the following instructions, simply typing "python" will run Python2, and you would need to type "python3" to trigger Python3. CnRAP was written around this assumption (that python2 is the default python installation in the path).**_
+_**CnRAP is written in Python3 and so all scripts are to be called using Python3. Stampy only supports Python2. Prior to running CnRAP, make sure you have working versions of both Python3 and Python2 setup in your system path or use Anaconda to manage the different python versions. If setting up CnRAP as per the following instructions, simply typing "python" will run Python2, and you would need to type "python3" to trigger Python3. CnRAP was written around this assumption (that python2 is the default python installation in the path).**_
 
 # Installation
-1. Download and install [Anaconda 3](https://www.anaconda.com/products/individual) on your system. Install Conda accepting defaults unless you are a more experienced user. Once complete, restart the shell to initialize the conda installation.
+1. Download and install [Anaconda 3](https://www.anaconda.com/products/individual) on your system. Install conda accepting defaults unless you are a more experienced user. Once complete, restart the shell to initialize the conda installation.
 ```
 wget https://repo.anaconda.com/archive/Anaconda3-2021.05-Linux-x86_64.sh
 
@@ -38,7 +38,7 @@ bash Anaconda3-2021.05-Linux-x86_64.sh
 ```
 conda create -n cnrap_env python=2
 ```
-  This will create a new python2 environment named _“cnrap_env”_ for which to continue the setup. When prompted, accept the listing of the additional components needed to be installed by pressing _“Y”_.
+This will create a new python2 environment named _“cnrap_env”_ for which to continue the setup. When prompted, accept the listing of the additional components needed to be installed by pressing _“Y”_.
 
 
 3. Activate the created environment and install the tools available from conda.
@@ -72,19 +72,19 @@ perl ~/anaconda3/pkgs/homer-<v#>/share/homer/configureHomer.pl -list
 
 
 5. Next, you need to install Stampy manually by going to [the Stampy website](https://www.well.ox.ac.uk/research/research-groups/lunter-group/lunter-group/stampy) where you need to [register and download](https://www.well.ox.ac.uk/forms/software-download-registration) Stampy. The [Stampy Documentation](https://www.rdm.ox.ac.uk/files/research/lunter-group/stampyreadme.txt) described its installation and usage instructions. 
-_The python2 restriction on CnRAP is due to Stampy. As such, future releases will not use Stampy as its no longer maintained and updated by its developers._
+_The python2 restriction on CnRAP is due to Stampy. As such, future releases of CnRAP (in-development) will not use Stampy as its no longer maintained and updated by its developers._
 
 
-6. The final step in the installation of CnRAP is to setup _kseq_trimmer_ from [Cut&Run Tools](https://bitbucket.org/qzhudfci/cutruntools/src/master/). Navigate to the bitbucket repository, and download to their own folder, the 2 files:
+6. The final step in the installation of CnRAP is to setup _kseq_trimmer_ from [Cut&Run Tools](https://bitbucket.org/qzhudfci/cutruntools/src/master/). Navigate to the bitbucket repository, and download the following files to their own folder:
 ```
   kseq.h
   kseq_test.c
 ```
-Next, you need to compile the files for your system by navigating to the folder were you downloaded the 2 files and typing...
+Next, you need to compile the files for your system by navigating to the folder were you downloaded the 2 files and at the terminal typing...
 ```
 gcc -O2 kseq_test.c -lz -o kseq_test
 ```
-(Optional) You can now add the path to _kseq_test_ to your .bashrc file or, more conveniently, just pass the full path to the CnRAP script.
+_(Optional)_ You can now add the path to _kseq_test_ to your .bashrc file or, more conveniently, just pass the full path to the CnRAP script.
   
 
 ## Genome Prep Prior to Running CnRAP
@@ -105,7 +105,7 @@ In our case, these indexes needed to be built for both hg38 and sacCer3.
 
   
 ## Script 01 Configuration
-Prior to running script 01 for each pair of fq files (R1 and R2 fq files per sample), there are a number of parameters that need to be configured internal to the script - these are found in lines 13-24. Below is a description of what each line requires as input.
+Prior to running script 01 for each pair of fq files (R1 and R2 fq files per sample), there are a number of parameters that need to be configured internal to the script - these are found in lines 13-24. Below is a description of what each line requires as input. The script itself also contains similar information.
 
 **Script 01 Variable** | **Required Input**
 -------------------|---------------
