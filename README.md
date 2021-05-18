@@ -61,7 +61,7 @@ perl ~/anaconda3/pkgs/homer-<v#>/share/homer/configureHomer.pl -install <req_gen
 perl ~/anaconda3/pkgs/homer-4.11-pl526hc9558a2_3/share/homer/configureHomer.pl -install hg38
 perl ~/anaconda3/pkgs/homer-4.11-pl526hc9558a2_3/share/homer/configureHomer.pl -install sacCer3
 ```
-User your native file-browser or tab-auto-complete on the terminal to figure out which version of homer is installed.
+User your native file-browser or tab-auto-complete on the terminal to figure out which version of HOMER is installed.
 _For the [SALL4 publication](https://www.cell.com/cell-reports/pdf/S2211-1247(20)31563-1.pdf), both the hg38 and the sacCer3 genomes are needed._
   
 
