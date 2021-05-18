@@ -92,7 +92,7 @@ gcc -O2 kseq_test.c -lz -o kseq_test
 In order to use this version of CnRAP, you need to create genome indexes for your genomes of interest using both bwa and Stampy. In our case that was the masked genomes for hg38 and sacCer3 which can be downloaded from [UCSC](https://hgdownload.soe.ucsc.edu/downloads.html). Once your genomes of interest are downloaded, build the genome indexes using the following command...
 ```
 bwa index -p <index_name> <masked_genome_fasta>.fa
-stampy.py --species=human --assembly=hg38_masked -G <index_name> <masked_genome_fasta>.fa
+stampy.py --species=<species> --assembly=<assembly_name> -G <index_name> <masked_genome_fasta>.fa
 stampy.py -g <index_name> -H <index_name>
 ```
 ... in our case our commands were...
