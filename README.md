@@ -5,7 +5,7 @@ _**CnRAP requires both Python2 and Python3. Python2 has reached end of life and 
 
 The python scripts are written to generate bash scripts (tested on Ubuntu 16.04). This was done to allow tweaking of bash scripts later if needed without having to re-run most steps etc... This approach works better for my workflow so thats why I did it this way.
 
-The tools required to be used in this pipeline include (in order of use)
+The tools required to be used in this pipeline include:
 - trimmomatic - v0.36 tested
 - kseq trimmer (kseq_test) - developed by the Orkin lab - tool can be found on their [bitbucket page](https://bitbucket.org/qzhudfci/cutruntools/src/master/)
 - bwa - v0.7.17-r1188 tested
