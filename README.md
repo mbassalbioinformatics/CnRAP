@@ -101,7 +101,8 @@ bwa index -p human_bwa_index_hg38_masked hg38_masked.fa
 stampy.py --species=human --assembly=hg38_masked -G human_bwa_index_hg38_masked ./hg38_masked.fa
 stampy.py -g human_bwa_index_hg38_masked -H human_bwa_index_hg38_masked
 ```
-
+In our case, these indexes needed to be built for both hg38 and sacCer3.
+  
 
 # How to run?
 Each script is very well annotated so hopefully they are easy enough to follow and you can follow my logic in what I did. 
