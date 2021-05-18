@@ -102,7 +102,7 @@ stampy.py -g human_bwa_index_hg38_masked -H human_bwa_index_hg38_masked
 
 
 # How to run?
-Each script is very well annotated so hopefully they are easy enough to follow and you can follow my logic in what I did.  
+Each script is very well annotated so hopefully they are easy enough to follow and you can follow my logic in what I did. 
 
 - At the start of each python script, there are a number of arguments that need to be passed into the script when calling. I hope the arguments are self-explanatory. 
 - _*Python script 01 needs to be run <b>seperately</b> for every pair of fastq files.*_  This is because each run for a pair of sequencing files can be quite time-consuming in case you want to run 1 or all of the pairs at the same time - depending on if your setup can take it - how many cores to throw at it etc...  A simple bash script can be written to run them sequentially or in parallel - again depending on your setup. 
