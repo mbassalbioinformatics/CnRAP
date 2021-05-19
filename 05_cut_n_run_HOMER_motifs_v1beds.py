@@ -4,7 +4,7 @@ from os import listdir
 import sys
 
 # read in input arguments that are required
-peaks_dir				= sys.argv[1] # where is seacr.py located? <path>/03_peak_calling_v1beds
+peaks_dir				= sys.argv[1] # where is peak files are located <path>/03_peak_calling_v1beds
 homer_beds_extension	= sys.argv[2] # where are the normalized bed_files homerMotif.bed
 output_base_dir			= sys.argv[3] # base directory where to dump the identified motifs <path>/04_peak_motifs_v1beds
 
