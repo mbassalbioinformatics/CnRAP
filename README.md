@@ -71,7 +71,7 @@ perl ~/anaconda3/pkgs/homer-<v#>/share/homer/configureHomer.pl -list
 ```
 
 
-5. Next, you need to install Stampy manually by going to [the Stampy website](https://www.well.ox.ac.uk/research/research-groups/lunter-group/lunter-group/stampy) where you need to [register and download](https://www.well.ox.ac.uk/forms/software-download-registration) Stampy. The [Stampy Documentation](https://www.rdm.ox.ac.uk/files/research/lunter-group/stampyreadme.txt) described its installation and usage instructions. You will then need to make sure that the Stampy path is in your ~/.bashrc file by including a statement along the lines of teh following wherein _"<path_to_stampy>"_ is the full path to the installation directory of Stampy.
+5. Next, you need to install Stampy manually by going to [the Stampy website](https://www.well.ox.ac.uk/research/research-groups/lunter-group/lunter-group/stampy) where you need to [register and download](https://www.well.ox.ac.uk/forms/software-download-registration) Stampy. The [Stampy Documentation](https://www.rdm.ox.ac.uk/files/research/lunter-group/stampyreadme.txt) described its installation and usage instructions. You will then need to make sure that the Stampy path is in your ~/.bashrc file by including a statement along the lines of the following wherein _"<path_to_stampy>"_ is the full path to the installation directory of Stampy.
 ```
 export PATH=$PATH:<path_to_stampy>/stampy-1.0.32
 ```
