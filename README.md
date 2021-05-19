@@ -180,11 +180,12 @@ Rscript <cnrap_R_script>.R --no-save
 ## Points to note...
 - _*Python script 01 needs to be run <b>seperately</b> for every pair of fastq files.*_  This is because each run for a pair of sequencing files can be quite time-consuming in case you want to run 1 or all of the pairs at the same time - depending on if your setup can take it - how many cores to throw at it etc...  A simple bash script can be written to run them sequentially or in parallel - again depending on your setup.
 
-Something that reared its ugly head when trying to run the individual scripts in parallel was sometimes 1 of the scripts would fail with a broken pipe error in python.  Not sure whether that was python3 calling it quits because of pushing the system or something with Ubuntu failed to pipe things properly - dunno tbh. If that happens just re-run the script and it should work fine.
+- Something that reared its ugly head when trying to run the individual scripts in parallel was sometimes 1 of the scripts would fail with a broken pipe error in python.  Not sure whether that was python3 calling it quits because of pushing the system or something with Ubuntu failed to pipe things properly - dunno tbh. If that happens just re-run the script and it should work fine.
 
 - The remaining scripts (both python and R) then assume that all the output files are together in a single directory for each step (follow the directory structure from the comments.  Again, doing it this way gives the flexibility to run 1 or all parts depending on what you want.
 
-Oh 1 last thing...and this is quite bad of me... these scripts have NO error handling really. No checking of input conditions or files or anything.  Big no no(!!) I know but still...  So just make sure you feed in what you want carefully into the scripts.
+
+- Oh 1 last thing...and this is quite bad of me... these scripts have NO error handling really. No checking of input conditions or files or anything.  Big no no(!!) I know but still...  So just make sure you feed in what you want carefully into the scripts.
 
 
 - **06/05/21 Update -**
