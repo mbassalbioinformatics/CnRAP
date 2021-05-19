@@ -87,7 +87,7 @@ Next, you need to compile the files for your system by navigating to the folder 
 ```
 gcc -O2 kseq_test.c -lz -o kseq_test
 ```
-_(Optional)_ You can now add the path to _kseq_test_ to your .bashrc file or, more conveniently, just pass the full path to the CnRAP script.
+_(Optional)_ You can now add the path to _kseq_test_ to your ~/.bashrc file or, more conveniently, just pass the full path to the CnRAP script.
   
 
 ## Genome Prep Prior to Running CnRAP
