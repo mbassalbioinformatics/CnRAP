@@ -14,7 +14,7 @@ def truncate(number, decimals=0):
 # read in input arguments that are required
 aligned_bams_folder		= sys.argv[1] # where the aligned bams are saved <path>/01_read_trimming_alignment/
 normalized_beds_folder	= sys.argv[2] # where to dump the pocessed bed files which ar ready for SEACR <path>/02_bam_processing_v1
-chrom_sizes_txt			= sys.argv[3] # path and name of the chormosome sies text file needed for the bed converstion <path>/hg38.chrom.sizes
+chrom_sizes_txt			= sys.argv[3] # path and name of the chormosome sizes text file needed for the bed conversion <path>/hg38.chrom.sizes
 
 # folders/programs to be used for initializing the script
 bamToBed_folder			=	normalized_beds_folder+ "/bed_converted_bams/"
