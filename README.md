@@ -129,8 +129,57 @@ Prior to running script 01 for each pair of fq files (R1 and R2 fq files per sam
 # How to run?
 Each script is very well annotated so hopefully they are easy enough to follow and you can follow my logic in what I did. 
 
-- At the start of each python script, there are a number of arguments that need to be passed into the script when calling. I hope the arguments are self-explanatory. 
-- _*Python script 01 needs to be run <b>seperately</b> for every pair of fastq files.*_  This is because each run for a pair of sequencing files can be quite time-consuming in case you want to run 1 or all of the pairs at the same time - depending on if your setup can take it - how many cores to throw at it etc...  A simple bash script can be written to run them sequentially or in parallel - again depending on your setup. 
+- At the start of each python script (scripts 01, 02, 03, 05), there are a number of arguments that need to be passed into the script when calling. Below is an explanation of what input parameters are required for each script. For eac script, run the following style of command, which will then generate the corresponding bash script to be run.
+```
+python3 <cnrap_python_script>.py <input_argument_1> ... <input_argument_n>
+
+bash <cnrap_python_script>.sh
+```
+
+**Script Number** | **Input Argument Number** | **Input Argument** | **Input Explanation**
+------------------|---------------------------|--------------------|-----------------------
+**01** | 1 | sample_id | What to re-name the samples to
+**01** | 2 | read1_fq_gz | the full path to read1 (R1) of the sample fq.gz files
+**01** | 3 | read2_fq_gz | the full path to read2 (R2) of the sample fq.gz files
+**01** | 4 | num_cores | The number of cors to use for the analysis
+**01** | 5 | aligned_folder | the folder path as to where to save the output to
+------| - | -----------------| -------------------------------------------
+**02** | 1 | aligned_bams_folder | where the aligned bams are saved - _<path>/01_read_trimming_alignment/_
+**02** | 2 | normalized_beds_folder | the folder path as to where to save the processed bed files ready for SEACR - _<path>/02_bam_processing_v1_
+**02** | 3 | chrom_sizes_txt | the path and name of the chromosome sizes text file needed for the bed conversion - _<path>/hg38.chorm.sizes
+------| - | -----------------| -------------------------------------------
+**03** | 1 | seacr_location | full path to the seacr.py script _**OR**_ if installed as outlined above, simply write "SEACR_1.3.sh" (check the version number installed)
+**03** | 2 | normalized_beds_folder | the folder path as to where  the processed bed files are saved - _<path>/02_bam_processing_v1_
+**03** | 3 | output_folder | the folder path as to where to save the output peaks to - _<path>/03_peak_calling_v1beds_
+**03** | 4 | chrom_sizes_txt | the path and name of the chromosome sizes text file needed for the bed conversion - _<path>/hg38.chorm.sizes
+------| - | -----------------| -------------------------------------------
+**05** | 1 | peaks_dir | where the peak files are saved - _<path>/03_peak_calling_v1beds_
+**05** | 2 | homer_bed_file_extensions | the file extensions used to identify the HOMER format bed files - _homerMotifs.bed_
+**05** | 3 | output_base_dir | base directory where to save the identified motifs - _<path>/04_peak_motifs_v1beds_
+------| - | -----------------| -------------------------------------------
+
+- At the start of the R scripts used (04, 06), a couple of lines need to be modified for the scripts to run. Below is a listing of what needs to be changed for each script. Simply load each script into RStudio, modify the required lines and run the script. Alternatively, if you have modified the required lines in advance, you can simply run the scripts from the terminal using the Rscript command.
+```
+Rscript <cnrap_R_script>.R --no-save
+```
+  
+**Script Number** | **Line Number** | **Input Argument** | **Input Explanation**
+------------------|---------------------------|--------------------|-----------------------
+**02** | 14 | path | the folder location of the called peaks - _<path>/03_peak_calling_v1beds_
+**02** | 15 | pattern | the uniquely identifying pattern for the peak files required for analysis - _stringent.auc.threshold.merge.bed_
+**02** | 20 | files | modify the input for the as.list() command to include all the files
+**02** | 22 | names(files) | label in quotation marks the name of each sample
+------| - | -----------------| -------------------------------------------
+**06** | 5 | input_beds_directory | full path to the called peaks bed files - _<path>/03_peak_calling_v1beds/annotated_relaxed_peaks_
+**06** | 6 | input_beds_suffix | the uniquely identifying pattern for the peak files for analysis - _rearrangedCols.txt_
+**06** | 7 | output_directory | the folder path as to where to save the output peaks to - _<path>/03_peak_calling_v1beds/annotated_relaxed_peaks_
+**06** | 8 | output_script_name | the name of the output script to save to - _"04_cut_n_run_meme_motifs_v1beds.sh_
+**06** | 9 | genome_sequence | full path to the masked genome fasta file - _<path>/hg38_masked.fa_
+------| - | -----------------| -------------------------------------------
+
+## Points to note...
+- _*Python script 01 needs to be run <b>seperately</b> for every pair of fastq files.*_  This is because each run for a pair of sequencing files can be quite time-consuming in case you want to run 1 or all of the pairs at the same time - depending on if your setup can take it - how many cores to throw at it etc...  A simple bash script can be written to run them sequentially or in parallel - again depending on your setup.
+
 Something that reared its ugly head when trying to run the individual scripts in parallel was sometimes 1 of the scripts would fail with a broken pipe error in python.  Not sure whether that was python3 calling it quits because of pushing the system or something with Ubuntu failed to pipe things properly - dunno tbh. If that happens just re-run the script and it should work fine.
 
 - The remaining scripts (both python and R) then assume that all the output files are together in a single directory for each step (follow the directory structure from the comments.  Again, doing it this way gives the flexibility to run 1 or all parts depending on what you want.
