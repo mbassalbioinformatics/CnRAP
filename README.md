@@ -127,9 +127,15 @@ Prior to running script 01 for each pair of fq files (R1 and R2 fq files per sam
 
 
 # How to run?
-Each script is very well annotated so hopefully they are easy enough to follow and you can follow my logic in what I did. 
 
-- At the start of each python script (scripts 01, 02, 03, 05), there are a number of arguments that need to be passed into the script when calling. Below is an explanation of what input parameters are required for each script. For eac script, run the following style of command, which will then generate the corresponding bash script to be run.
+In order to run CnRAP, you need to first load the conda environment that has been setup to run everything...
+```
+conda activate cnrap_env
+```
+
+Thereafter, each script needs to be run in sequential order. Each script is annotated so hopefully they are easy enough to follow and you can follow my logic in what I did. 
+
+- At the start of each python script (scripts 01, 02, 03, 05), there are a number of arguments that need to be passed into the script when calling. Below is an explanation of what input parameters are required for each script. For each script, run the following style of command, which will then generate the corresponding bash script to be run.
 ```
 python3 <cnrap_python_script>.py <input_argument_1> ... <input_argument_n>
 
