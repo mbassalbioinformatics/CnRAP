@@ -186,6 +186,23 @@ Rscript <cnrap_R_script>.R --no-save
 **06** | 9 | genome_sequence | full path to the masked genome fasta file - _<path>/hg38_masked.fa_
 ------| - | -----------------| -------------------------------------------
 
+## Explanation of what each script does?
+
+ Each script performs a number of steps in the analysis. Running the python scripts with the required input arguments will generate a bash script that performs all the necessary analysis steps. A simple wrapper script can run the pthon scripts and the generated bash scripts to automate the entire pipeline as well as capturing all output/error streams. Below is a brief explanation of what each script is doing as part of the whole process.
+ 
+1. Script 01 first runs trimmomatic across the raw reads using the parameters "LEADING:20 TRAILING:20 SLIDINGWINDOW:4:15 MINLEN:25" and "ILLUMINACLIP:<path_to_adaptors>/Truseq3.PE.fa:2:15:4:4:true". This trims the portion of the reads with low quality while also removing illumina sequencing adaptors if present. Next, kseq_trimming is run to remove additional barcode sequences. Next, the fastq files are aligned using BWA and Stampy to the reference genomes, which in our case was hg38 and sacCer3. After alignment, unmapped reads are removed and bam files are sorted, indexed and alignment statistics are calculated. 
+ 
+2. Script 02, picks up where script 01 finished. It takes the aligned bam files, along with the calculated alignment statistics to convert the bam files to bedGraph files while simultaneously normalizing them based on the number of reads mapped to the sacCer genome. The normalization factor is determined as 10000000 / ((mapped_reads_per_sacCer_file) / 2 )
+ 
+3. Script 03 takes the normalized bedGraphs, sorts them and makes coverage files for viewing. As a final step, script 03 calls SEACR on the bedGraph files to call peaks.
+ 
+4. R script 04 takes in the output called peaks of SEACR, annotates them using ChIPSeeker and generates some output figures.
+
+5. Script 05 prepares the files required for running motif analysis using HOMER.
+ 
+6. R script 06 prepares the files required for running motif analysis using MEME.
+
+ 
 ## Points to note...
 - _*Python script 01 needs to be run <b>seperately</b> for every pair of fastq files.*_  This is because each run for a pair of sequencing files can be quite time-consuming in case you want to run 1 or all of the pairs at the same time - depending on if your setup can take it - how many cores to throw at it etc...  A simple bash script can be written to run them sequentially or in parallel - again depending on your setup.
 
