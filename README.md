@@ -174,10 +174,10 @@ Rscript <cnrap_R_script>.R --no-save
   
 **Script Number** | **Line Number** | **Input Argument** | **Input Explanation**
 ------------------|---------------------------|--------------------|-----------------------
-**02** | 14 | path | the folder location of the called peaks - _<path>/03_peak_calling_v1beds_
-**02** | 15 | pattern | the uniquely identifying pattern for the peak files required for analysis - _stringent.auc.threshold.merge.bed_
-**02** | 20 | files | modify the input for the as.list() command to include all the files
-**02** | 22 | names(files) | label in quotation marks the name of each sample
+**04** | 14 | path | the folder location of the called peaks - _<path>/03_peak_calling_v1beds_
+**04** | 15 | pattern | the uniquely identifying pattern for the peak files required for analysis - _stringent.auc.threshold.merge.bed_
+**04** | 20 | files | modify the input for the as.list() command to include all the files
+**04** | 22 | names(files) | label in quotation marks the name of each sample
 ------| - | -----------------| -------------------------------------------
 **06** | 5 | input_beds_directory | full path to the called peaks bed files - _<path>/03_peak_calling_v1beds/annotated_relaxed_peaks_
 **06** | 6 | input_beds_suffix | the uniquely identifying pattern for the peak files for analysis - _rearrangedCols.txt_
