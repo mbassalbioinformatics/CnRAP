@@ -108,6 +108,9 @@ In our case, these indexes needed to be built for both hg38 and sacCer3.
 
   
 ## Script 01 Configuration
+
+The input into script 01 is read1 and read2 (R1 & R2) fastq files for an individual sample. Fastq demultiplexing must be done prior to running CnRAP. Most sequencing facilities will provide de-multiplexes samples by default, but if you need to de-multiplex your samples manually, tutorials can be found online and are beyond the scope of this repo.
+
 Prior to running script 01 for each pair of fq files (R1 and R2 fq files per sample), there are a number of parameters that need to be configured internal to the script - these are found in lines 13-24. Below is a description of what each line requires as input. The script itself also contains similar information.
 
 **Script 01 Variable** | **Required Input**
