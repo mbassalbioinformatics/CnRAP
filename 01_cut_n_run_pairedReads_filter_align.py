@@ -7,7 +7,7 @@ sample_id		= sys.argv[1] # what to name the samples - easier to define than to s
 read1_fq_gz		= sys.argv[2] # read1.fq.gz
 read2_fq_gz		= sys.argv[3] # read2.fq.gz
 num_cores		= sys.argv[4] # how many cores to use for the analysis
-aligned_folder	= sys.argv[5] # where to dump the aligned reads - duh!
+aligned_folder	= sys.argv[5] # where to dump the aligned reads
 
 # folders/programs to be used for initializing the script
 trimmomatic_path_jar	=	"<path>/trimmomatic-0.36.jar"
