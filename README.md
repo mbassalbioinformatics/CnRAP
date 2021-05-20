@@ -147,10 +147,10 @@ bash <cnrap_python_script>.sh
 
 **Script Number** | **Input Argument Number** | **Input Argument** | **Input Explanation**
 ------------------|---------------------------|--------------------|-----------------------
-**01** | 1 | sample_id | What to re-name the samples to
+**01** | 1 | sample_id | what to re-name the samples to
 **01** | 2 | read1_fq_gz | the full path to read1 (R1) of the sample fq.gz files
 **01** | 3 | read2_fq_gz | the full path to read2 (R2) of the sample fq.gz files
-**01** | 4 | num_cores | The number of cors to use for the analysis
+**01** | 4 | num_cores | the number of cors to use for the analysis
 **01** | 5 | aligned_folder | the folder path as to where to save the output to
 ------| - | -----------------| -------------------------------------------
 **02** | 1 | aligned_bams_folder | where the aligned bams are saved - _<path>/01_read_trimming_alignment/_
