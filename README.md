@@ -138,7 +138,7 @@ conda activate cnrap_env
 
 Thereafter, each script needs to be run in sequential order. Each script is annotated so hopefully they are easy enough to follow and you can follow my logic in what I did. 
 
-- At the start of each python script (scripts 01, 02, 03, 05), there are a number of arguments that need to be passed into the script when calling. Below is an explanation of what input parameters are required for each script. For each script, run the following style of command, which will then generate the corresponding bash script to be run.
+- At the start of each python script (scripts 01, 02, 03, 05), there are a number of arguments that need to be passed into the script when calling. Below is an explanation of what input arguments are required for each script and the _order_ in which they need to be passed to the appropriate script. For each script, run the following style of command, which will then generate the corresponding bash script to be run.
 ```
 python3 <cnrap_python_script>.py <input_argument_1> ... <input_argument_n>
 
