@@ -214,5 +214,5 @@ Rscript <cnrap_R_script>.R --no-save
 - Oh 1 last thing...and this is quite bad of me... these scripts have NO error handling really. No checking of input conditions or files or anything.  Big no no(!!) I know but still...  So just make sure you feed in what you want carefully into the scripts.
 
 
-- **06/05/21 Update -**
+- **24/05/21 Update -**
 Ok soooo in developing our ChIP-Seq Analysis Pipeline (ChIP-AP) (https://github.com/JSuryatenggara/ChIP-AP), a number of people have asked about Cut&Run and its use with that suite of tools. So keeping this interest in mind, we are developing CnRAPv2 which takes many design elements from ChIP-AP and tailors the analysis experience for C&R that builds on this pipeline but greatly improves upon it. The code in this repo will remain as is (with only bug fixes being made) owing to its use in our [publication](https://www.cell.com/cell-reports/pdf/S2211-1247(20)31563-1.pdf) and a companion STAR Protocol (work-in-progress). However, when CnRAPv2 is ready, will link it here for future publications and uses.
