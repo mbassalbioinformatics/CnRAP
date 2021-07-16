@@ -106,6 +106,20 @@ stampy.py -g human_bwa_index_hg38_masked -H human_bwa_index_hg38_masked
 ```
 In our case, these indexes needed to be built for both hg38 and sacCer3 and I placed the bwa and stampy indexes in the same folder.
 
+## (Optional) Optical Duplicate Removal prior to running pipeline
+
+The level of PCR duplication that occurs during library prep can vary. To remove PCR duplicates from your samples there are 2 options. The 1st option is to run [Clumpify](https://jgi.doe.gov/data-and-tools/bbtools/bb-tools-user-guide/clumpify-guide/) from the BBmap Suite on your demulitplexed fastq files _prior_ to starting the pipeline using the following command:
+```
+clumpify.sh in1=sample_R1.fq.gz in2=sample_R2.fq.gz out1=output_R1.fq.gz out2=output_R2.fq.gz dedupe spany addcount
+```
+
+The other option available to you is to run Picard tools _after_ aligning your samples to the reference genome. Naturally, refer to the [Picard Official Documentation](https://gatk.broadinstitute.org/hc/en-us/articles/360037052812-MarkDuplicates-Picard-) for full details, but to mark and remove PCR duplicates, you can use the following command:
+```
+java -jar picard.jar MarkDuplicates I=input.bam O=marked_duplicates.bam M=marked_duplicates_metrics.txt --REMOVE_DUPLICATES --REMOVE_SEQUENCING_DUPLICATES
+```
+
+Which approach you choose to take is entirely up to you the user but both options work relatively well, although Picard can generally be seen used more so than Clumpify. Personal preference though.... Clumpify.
+
   
 ## Script 01 Configuration
 
