@@ -1,3 +1,4 @@
+## DEPRECATED - Use CaRAS Instead!
 # CnRAP (Cut & Run Analysis Pipeline)
 Analytical pipeline developed to anlayze Cut and Run data.  Inspired by both Henikoff (SEACR) and Orkin (Cut&amp;RunTools) lab pipelines. 
 
